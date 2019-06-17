@@ -15,71 +15,73 @@
           </div>
 
           <div id="form" class="col-sm-6">
-            <div class="form-group col-sm-12">
-              <label class="col-sm-4 control-label" for="nome">Nome:</label>
-              <div class="col-sm-8">
-                <input class="form-control" type="text" id="nome" name="nome" />
-                <input type="hidden" id="bandeira" name="bandeira" />
+            <div class="row">
+              <div class="form-group col-sm-12">
+                <label class="col-sm-4 control-label" for="nome">Nome:</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="text" id="nome" name="nome" />
+                  <input type="hidden" id="bandeira" name="bandeira" />
+                </div>
               </div>
-            </div>
-            
-            <div class="form-group col-sm-12">
-              <label class="col-sm-4 control-label" for="numero-cartao">Número do Cartão:</label>
-              <div class="col-sm-8">
-                <input class="form-control" type="text" id="numero-cartao" name="numero-cartao" />
-              </div>
-            </div>
-            
-            <div class="form-group col-sm-12">
-              <label class="col-sm-4 control-label" for="validade">Validade:</label>
-              <div class="col-sm-8">
-                <input class="form-control" type="text" id="validade" name="validade" placeholder="Ex: 12/2020" />
-              </div>
-            </div>
 
-            <div class="form-group col-sm-12">
-              <label class="col-sm-4 control-label" for="cvv">Código de Segurança:</label>
-              <div class="col-sm-8">
-                <input class="form-control" type="text" id="cvv" name="cvv" />
+              <div class="form-group col-sm-12">
+                <label class="col-sm-4 control-label" for="numero-cartao">Número do Cartão:</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="text" id="numero-cartao" name="numero-cartao" />
+                </div>
               </div>
-            </div>
 
-            <div class="form-group col-sm-12">
-              <label class="col-sm-4 control-label" for="data-nascimento">Data de Nascimento:</label>
-              <div class="col-sm-8">
-                <input class="form-control" type="text" id="data-nascimento" name="data-nascimento" placeholder="Ex: 01/12/2020" value="{{ data_nascimento }}" />
+              <div class="form-group col-sm-12">
+                <label class="col-sm-4 control-label" for="validade">Validade:</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="text" id="validade" name="validade" placeholder="Ex: 12/2020" />
+                </div>
               </div>
-            </div>
 
-            <div class="form-group col-sm-12">
-              <label class="col-sm-4 control-label" for="cpf">CPF:</label>
-              <div class="col-sm-8">
-                <input class="form-control" type="text" id="cpf" name="cpf" value="{{ cpf }}" />
+              <div class="form-group col-sm-12">
+                <label class="col-sm-4 control-label" for="cvv">Código de Segurança:</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="text" id="cvv" name="cvv" />
+                </div>
               </div>
-            </div>
 
-            <div class="form-group col-sm-12">
-              <label class="col-sm-4 control-label" for="telefone">Telefone:</label>
-              <div class="col-sm-8">
-                <input class="form-control" type="text" id="telefone" name="telefone" value="{{ telefone }}" />
+              <div class="form-group col-sm-12">
+                <label class="col-sm-4 control-label" for="data-nascimento">Data de Nascimento:</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="text" id="data-nascimento" name="data-nascimento" placeholder="Ex: 01/12/2020" value="{{ data_nascimento }}" />
+                </div>
               </div>
-            </div>
-            
-            <div class="alert alert-info alert-info-installments fade col-sm-12">Carregando...</div>
-            
-            <div class="form-group col-sm-12 vhide">
-              <label class="col-sm-4 control-label" for="parcelas">Parcelas:</label>
-              <div class="col-sm-8">
-                <select class="form-control" id="parcelas" name="parcelas"></select>
+
+              <div class="form-group col-sm-12">
+                <label class="col-sm-4 control-label" for="cpf">CPF:</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="text" id="cpf" name="cpf" value="{{ cpf }}" />
+                </div>
               </div>
-            </div>
-            
-            <div class="form-group col-sm-12 vhide">
-              <div class="col-sm-5 col-sm-offset-4">
-                <button type="button" id="button-confirm" class="btn btn-primary" data-loading-text="Aguarde...">
-                  <i class="fa fa-credit-card-alt"></i>
-                  Pagar
-                </button>
+
+              <div class="form-group col-sm-12">
+                <label class="col-sm-4 control-label" for="telefone">Telefone:</label>
+                <div class="col-sm-8">
+                  <input class="form-control" type="text" id="telefone" name="telefone" value="{{ telefone }}" />
+                </div>
+              </div>
+
+              <div class="alert alert-info alert-info-installments fade col-sm-12">Carregando...</div>
+
+              <div class="form-group col-sm-12 vhide">
+                <label class="col-sm-4 control-label" for="parcelas">Parcelas:</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="parcelas" name="parcelas"></select>
+                </div>
+              </div>
+
+              <div class="form-group col-sm-12 vhide">
+                <div class="col-sm-5 col-sm-offset-4">
+                  <button type="button" id="button-confirm" class="btn btn-primary" data-loading-text="Aguarde...">
+                    <i class="fa fa-credit-card-alt"></i>
+                    Pagar
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -105,6 +107,8 @@
 </div>
 
 <script type="text/javascript">
+    $('.vhide').hide();
+
     if (typeof(PagSeguroDirectPayment) == 'undefined') {
         console.log('Erro ao carregar javascript. Tenha certeza que você limpou o cache de modificações.')
         alert('Erro ao carregar javascript.');
@@ -153,7 +157,7 @@
 						$('#parcelas').append('<option data-value="' + e.quantity + '" value="' + e.installmentAmount + '">' + e.quantity + 'x de ' + formatMoney(e.installmentAmount) + '</option>');
 					}
 				});
-				
+
 				$('.vhide').fadeIn('slow');
 			},
             error: function(err) {

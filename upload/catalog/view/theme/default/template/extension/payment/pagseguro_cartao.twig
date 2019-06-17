@@ -10,11 +10,11 @@
     {% else %}
 
         <div class="form-horizontal">
-          <div class="form-group">
+          <div class="form-group" style="visibility: hidden; height: 0;">
             <div id="bandeiras" class="col-sm-7 col-sm-offset-2"></div>
           </div>
 
-          <div id="form" class="col-sm-offset-1 col-sm-6">
+          <div id="form" class="col-sm-6">
             <div class="form-group col-sm-12">
               <label class="col-sm-4 control-label" for="nome">Nome:</label>
               <div class="col-sm-8">
@@ -43,33 +43,22 @@
                 <input class="form-control" type="text" id="cvv" name="cvv" />
               </div>
             </div>
-            
-            <div class="form-group col-sm-12">
-              <div class="col-sm-5 col-sm-offset-4" id="check">
-                <div class="checkbox">
-                  <input type="checkbox" name="check-titular" id="check-titular" {{ isRegisterComplete ? 'checked' : '' }} />
-                  <label for="check-titular">
-                    Eu sou o títular do cartão
-                  </label>
-                </div>
-              </div>
-            </div>
 
-            <div class="form-group col-sm-12 titular">
+            <div class="form-group col-sm-12">
               <label class="col-sm-4 control-label" for="data-nascimento">Data de Nascimento:</label>
               <div class="col-sm-8">
                 <input class="form-control" type="text" id="data-nascimento" name="data-nascimento" placeholder="Ex: 01/12/2020" value="{{ data_nascimento }}" />
               </div>
             </div>
 
-            <div class="form-group col-sm-12 titular">
+            <div class="form-group col-sm-12">
               <label class="col-sm-4 control-label" for="cpf">CPF:</label>
               <div class="col-sm-8">
                 <input class="form-control" type="text" id="cpf" name="cpf" value="{{ cpf }}" />
               </div>
             </div>
 
-            <div class="form-group col-sm-12 titular">
+            <div class="form-group col-sm-12">
               <label class="col-sm-4 control-label" for="telefone">Telefone:</label>
               <div class="col-sm-8">
                 <input class="form-control" type="text" id="telefone" name="telefone" value="{{ telefone }}" />
@@ -88,24 +77,24 @@
             <div class="form-group col-sm-12 vhide">
               <div class="col-sm-5 col-sm-offset-4">
                 <button type="button" id="button-confirm" class="btn btn-primary" data-loading-text="Aguarde...">
-                  <i class="fa fa-credit-card-alt"></i> 
+                  <i class="fa fa-credit-card-alt"></i>
                   Pagar
                 </button>
               </div>
             </div>
           </div>
           
-          <div class="flip-container col-sm-5">
+          <div class="flip-container col-sm-6">
             <div class="flipper">
               <div class="front">
-                <div id="credit-card-example-number" style="border: 3px solid #F00;position: absolute;height: 27px;width: 207px;top: 90px;left: 20px;opacity: 0;z-index:1"></div>
-                <div id="credit-card-example-validate" style="border: 3px solid #F00;position: absolute;height: 32px;width: 67px;top: 111px;left: 122px;opacity: 0"></div>
-                <div id="credit-card-example-customer" style="border: 3px solid #F00;position: absolute;height: 27px;width: 130px;top: 141px;left: 20px;opacity: 0"></div>
-                <div id="credit-card-example-logo" style="position: absolute;height: 43px;width: 63px;top: 114px;left: 208px;border-radius: 8px;opacity: 0"></div>
+                <div id="credit-card-example-number" style="border: 3px solid #F00;position: absolute;height: 27px;width: 225px;top: 94px;left: 32px;opacity: 0;z-index:1"></div>
+                <div id="credit-card-example-validate" style="border: 3px solid #F00;position: absolute;height: 22px;width: 55px;top: 120px;left: 122px;opacity: 0"></div>
+                <div id="credit-card-example-customer" style="border: 3px solid #F00;position: absolute;height: 22px;width: 121px;top: 141px;left: 32px;opacity: 0"></div>
+                <div id="credit-card-example-logo" style="position: absolute;height: 43px;width: 63px;top: 120px;left: 186px;border-radius: 8px;opacity: 0"></div>
                 <img src="catalog/view/theme/default/image/CreditCardFront.gif" style="height:180px" />
               </div>
               <div class="back">
-                <div id="credit-card-example-ccv" style="border: 3px solid #F00;position: absolute;height: 37px;width: 50px;top: 60px;left: 225px;opacity: 0"></div>
+                <div id="credit-card-example-ccv" style="border: 3px solid #F00;position: absolute;height: 25px;width: 26px;top: 72px;left: 200px;opacity: 0"></div>
                 <img src="catalog/view/theme/default/image/CreditCardBack.gif" style="height:180px" />
               </div>
             </div>
@@ -196,15 +185,15 @@
                         position: 'absolute',
                         height: 43,
                         width: 63,
-                        top: 114,
-                        left: 208,
+                        top: 120,
+                        left: 186,
                         borderRadius: 8,
                         opacity: 0
                     });
       
                     $('.flip-container .front #credit-card-example-logo').stop().animate({
                         opacity: 1
-                    }, 1500);
+                    }, 500);
                 }
             });
         }
@@ -280,14 +269,6 @@
         getInstallments("visa");
     });
   
-    $('#check-titular').change(function(){
-        if ($(this).is(':checked')) {
-            $('.titular').slideUp('show');
-        } else {
-            $('.titular').slideDown('show');
-        }
-    });
-  
     $('#cvv').focus(function(){
         $('.flip-container').toggleClass('flip-container-hover');
     });
@@ -329,8 +310,6 @@
             opacity:0
         }, 1000);
     });
-  
-    $('#check-titular').trigger('change');
 </script>
 <script>
     var error_ptBR = {

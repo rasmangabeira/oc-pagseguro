@@ -583,15 +583,6 @@
           
             <!-- Tab Debug -->
             <div class="tab-pane" id="debug">
-              <div class="alert alert-info">
-                <h3>Erros Comuns</h3>
-                <p>http://forum.pagseguro.uol.com.br/t/8514331/msg-de-erro-como-pagseguroserviceexception-http-401---unauthorized</p>
-                <p>http://forum.pagseguro.uol.com.br/t/9454406/checkout-transparente-forbidden</p>
-                <p>http://forum.pagseguro.uol.com.br/t/11286061/erro-ao-finalizar-pedido---forbidden</p>
-                <p>http://forum.pagseguro.uol.com.br/t/10184598/forbidden-ao-tentar-autenticar-na-api</p>
-                <p>http://forum.pagseguro.uol.com.br/t/9391115/erro-no-retorno-da-consulta-por-transacao</p>
-                <button class="close" data-dismiss="alert" type="button">&times;</button>
-              </div>
               <div class="well" style="min-height:150px">
                 {% for value in debug %}
                     {{ value|escape('html') }}

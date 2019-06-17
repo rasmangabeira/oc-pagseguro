@@ -2,7 +2,7 @@
 <modification>
   <name>Pagseguro (Checkout transparente)</name>
   <code>oc_pagseguro</code>
-  <version>0.1-dev</version>
+  <version>1.0</version>
   <author>Ricardo Vigatti</author>
   <link>https://ricardovigatti.com</link>
 
@@ -10,7 +10,6 @@
     <operation>
       <search trim="true"><![CDATA[$this->load->language('checkout/checkout');]]></search>
       <add position="after"><![CDATA[
-        // verifica se está em modo de teste
         if (!$this->config->get('payment_pagseguro_modo_teste')) {
           $this->document->addScript('https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js');
         } else {
